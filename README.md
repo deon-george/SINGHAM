@@ -1,5 +1,9 @@
 <p align="center">
-<script src="appreadme.js"></script>
+<canvas id="matrix"></canvas>
+
+<script>
+drawMatrix();
+</script>
 </p>
 
 <h1 align="center">
