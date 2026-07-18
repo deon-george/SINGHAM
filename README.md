@@ -2,7 +2,7 @@
   <img src="matrix.svg" alt="SINGHAM Matrix Rain" width="100%" />
 </p>
 
-<h1 align="center">
+<h1 align="center" style="font-size:160px;">
 🛡️ SINGHAM
 </h1>
 
@@ -80,30 +80,87 @@ Instead of simply labeling something as "Safe" or "Dangerous", the platform also
 
 # 🏗️ System Architecture
 
-```text
-                     User
-                       │
-                       ▼
-              SINGHAM Web Platform
-                       │
- ┌──────────────┬──────────────┬──────────────┬──────────────┐
- ▼              ▼              ▼              ▼
-Email       URL Scanner     QR Scanner    File Scanner
-Analyzer
- │              │              │              │
- └──────────────┴──────────────┴──────────────┘
-                ▼
-      Machine Learning Models
-      (XGBoost + Random Forest)
-                │
-                ▼
-        Gemini LLM + RAG Engine
-                │
-                ▼
-      Explainable AI (SHAP + LLM)
-                │
-                ▼
-         Threat Report Dashboard
+```mermaid
+flowchart TD
+    %% Styling
+    classDef userStyle fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
+    classDef frontendStyle fill:#1e293b,stroke:#3b82f6,stroke-width:2px,color:#f8fafc;
+    classDef routeStyle fill:#0f172a,stroke:#8b5cf6,stroke-width:2px,color:#f8fafc;
+    classDef backendStyle fill:#1e293b,stroke:#10b981,stroke-width:2px,color:#f8fafc;
+    classDef modelStyle fill:#0f172a,stroke:#f59e0b,stroke-width:2px,color:#f8fafc;
+    classDef dbStyle fill:#111827,stroke:#ec4899,stroke-width:2px,color:#f8fafc;
+
+    %% Nodes
+    User([👤 End User]):::userStyle
+    
+    subgraph Frontend [🎨 User Interface - HTML5 / CSS3 / Vanilla JS]
+        Portal[🏠 Home Landing Portal]
+        URLDash[🌐 URL Scam Dashboard]
+        QRDash[📱 Fake QR Dashboard]
+        MalDash[🦠 Malware Dashboard]
+        EmailDash[📧 Email Phishing Dashboard]
+    end
+    class Portal,URLDash,QRDash,MalDash,EmailDash frontendStyle;
+
+    subgraph API [🛣️ Unified API Routes - Flask Backend]
+        R_Home["/ (GET)"]
+        R_URL["/predict (POST)"]
+        R_QR["/predict_qr (POST)"]
+        R_Mal["/analyze_malware (POST)"]
+        R_Email["/analyze_email (POST)"]
+    end
+    class R_Home,R_URL,R_QR,R_Mal,R_Email routeStyle;
+
+    subgraph Engine [⚙️ Processing & Analytics Engines]
+        URLExt[Extract URL Features]
+        MalExt[Extract PE File Features]
+        PDFExt[Extract PDF Text]
+        RAGEngine[LangChain RAG Engine]
+    end
+    class URLExt,MalExt,PDFExt,RAGEngine backendStyle;
+
+    subgraph Models [🧠 Models & AI Layer]
+        PhishModel[phishing_model.pkl<br/>XGBoost / Random Forest]
+        SHAP["SHAP Explainability (XAI)<br/>PhishingExplainer"]
+        MalModel[malwareclassifier-V2.pkl<br/>PE File Classifier]
+        Gemini[Gemini 3.5 Flash LLM]
+    end
+    class PhishModel,SHAP,MalModel,Gemini modelStyle;
+
+    subgraph Storage [💾 Databases & Context Storage]
+        FAISS[(FAISS Vector Store)]
+        SQLite[(SQLite stats.db)]
+        KB[knowledge_base.txt]
+    end
+    class FAISS,SQLite,KB dbStyle;
+
+    %% Connections
+    User --> Portal
+    Portal --> URLDash & QRDash & MalDash & EmailDash
+    
+    URLDash --> R_URL
+    QRDash --> R_QR
+    MalDash --> R_Mal
+    EmailDash --> R_Email
+    
+    R_URL & R_QR --> URLExt
+    R_Mal --> MalExt
+    R_Email --> PDFExt
+    
+    URLExt --> PhishModel
+    PhishModel --> SHAP
+    SHAP --> URLDash & QRDash
+    
+    MalExt --> MalModel
+    MalModel --> MalDash
+    
+    PDFExt --> RAGEngine
+    KB --> RAGEngine
+    RAGEngine --> FAISS
+    FAISS --> Gemini
+    Gemini --> EmailDash
+    
+    R_QR --> SQLite
 ```
 
 ---
@@ -127,39 +184,41 @@ Analyzer
 
 ```text
 SINGHAM/
-├── backend/                        # Unified backend service application
-│   ├── ML_model/                   # Compiled Machine Learning models
-│   │   └── malwareclassifier-V2.pkl
-│   ├── app.py                      # Main Flask application & unified API routes
-│   ├── explainability.py           # SHAP-based Explainable AI logic
-│   ├── feature_extraction_malware.py # Portable Executable (PE) file feature extractor
-│   ├── featureextraction.py        # URL security feature extractor
-│   ├── knowledge_base.txt          # Context database for Email Phishing RAG
-│   ├── phishing_model.pkl          # Pre-trained XGBoost/Random Forest URL classifier
-│   └── stats.db                    # SQLite database to track system scan metrics
-├── frontend/                       # Unified frontend application resources
-│   ├── static/                     # CSS stylesheets and JavaScript logic files
-│   │   ├── email/                  # Static assets for the Email Phishing module
-│   │   ├── fake_qr/                # Static assets for the QR code scanner
-│   │   └── url_scam/               # Static assets for the URL scan module
-│   └── templates/                  # HTML page templates served by Flask
-│       ├── email_dashboard.html    # Email scanner interface
+├── backend/                        # Flask backend application
+│   ├── ML_model/                   # Machine Learning model binaries
+│   │   └── malwareclassifier-V2.pkl # Pre-trained malware classifier model
+│   ├── app.py                      # Main Flask application and API route controllers
+│   ├── explainability.py           # SHAP explanation calculations for threat analysis
+│   ├── feature_extraction_malware.py # Portable Executable (PE) file parsing & feature extractor
+│   ├── featureextraction.py        # URL security feature extraction logic
+│   ├── knowledge_base.txt          # Reference text/document database for RAG phishing detector
+│   ├── phishing_model.pkl          # Pre-trained XGBoost/Random Forest URL scanner model
+│   ├── stats.db                    # SQLite database to track system scan metrics
+│   └── uploads/                    # Temporary storage directory for uploaded files during scans
+├── frontend/                       # User Interface resources
+│   ├── static/                     # Static CSS styling & JavaScript logic files
+│   │   ├── email/                  # Static assets for the Email Phishing detector
+│   │   │   ├── script.js
+│   │   │   └── style.css
+│   │   ├── fake_qr/                # Static assets for the Fake QR Code scanner
+│   │   │   ├── app.js
+│   │   │   └── style.css
+│   │   └── url_scam/               # Static assets for the Scam URL scanner
+│   │       ├── app.js
+│   │       └── style.css
+│   └── templates/                  # Jinja2 HTML pages served by Flask
+│       ├── email_dashboard.html    # Phishing email scan dashboard
 │       ├── home.html               # Main landing portal
 │       ├── malware_dashboard.html  # Malware scanner upload panel
 │       ├── malware_result.html     # Malware analysis result display
 │       ├── qr_dashboard.html       # QR scan dashboard
 │       └── url_dashboard.html      # URL scan dashboard
-├── EmailPhishing/                  # Module prototype: Phishing email detector
-├── Malware Detection/              # Module prototype: Executable malware scanner
-├── fakeQRcode Detection/           # Module prototype: QR scanner
-├── url scam detection/             # Module prototype: URL detector
-├── .env.example                    # Template for setting up environment variables
-├── .gitignore                      # Git ignored files configuration
+├── .env.example                    # Template for configuring environment variables
+├── .gitignore                      # Configuration for Git ignored files
 ├── Licence                         # Project License agreement
-├── banner.png                      # Branding Banner asset
-├── requirements.txt                # Python package dependencies
-├── setup_project.py                # Setup script to assemble modules into backend/frontend
-└── README.md                       # Project documentation
+├── matrix.svg                      # Custom Matrix digital rain animation SVG for README.md
+├── requirements.txt                # Python backend package dependencies
+└── README.md                       # Documentation of the project
 ```
 
 ---
@@ -197,13 +256,7 @@ Install all required packages from `requirements.txt`:
 pip install -r requirements.txt
 ```
 
-### 5. Assemble the Unified Project
-Run the compilation script to compile the individual prototype modules into the unified `backend/` and `frontend/` folders:
-```bash
-python setup_project.py
-```
-
-### 6. Set Up Environment Variables
+### 5. Set Up Environment Variables
 The Email Phishing analysis system relies on Google Gemini models. You need to configure a Google Gemini API Key:
 1. Copy the `.env.example` file into the `backend/` directory as `.env`:
    ```bash
@@ -216,7 +269,7 @@ The Email Phishing analysis system relies on Google Gemini models. You need to c
    > [!TIP]
    > You can get a free API Key from [Google AI Studio](https://aistudio.google.com/).
 
-### 7. Run the Application
+### 6. Run the Application
 1. Navigate to the backend directory:
    ```bash
    cd backend
