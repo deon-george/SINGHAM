@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="100%" height="300" style="background:#0f172a; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);">
+  <defs>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00E6A8" stop-opacity="0" />
+      <stop offset="25%" stop-color="#00E6A8" stop-opacity="0.1" />
+      <stop offset="85%" stop-color="#00E6A8" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
+    </linearGradient>
+  </defs>
+  
+  <style>
+    @keyframes fall-front {
+      0% { transform: translateY(-350px); }
+      100% { transform: translateY(450px); }
+    }
+    @keyframes fall-mid {
+      0% { transform: translateY(-280px); }
+      100% { transform: translateY(380px); }
+    }
+    @keyframes fall-back {
+      0% { transform: translateY(-220px); }
+      100% { transform: translateY(320px); }
+    }
+    
+    .matrix-col {
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-weight: 700;
+      fill: url(#fade);
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    
+    .col-front { animation-name: fall-front; }
+    .col-mid { animation-name: fall-mid; }
+    .col-back { animation-name: fall-back; }
+  </style>
+
+  <!-- Front Layer (Fast, Large, Bright) -->
+  <text x="15" y="0" class="matrix-col col-front" style="font-size: 15px; opacity: 1.0; animation-duration: 2.1s; animation-delay: -0.4s;">
+    <tspan x="15" dy="0">S</tspan><tspan x="15" dy="16">I</tspan><tspan x="15" dy="16">N</tspan><tspan x="15" dy="16">G</tspan><tspan x="15" dy="16">H</tspan><tspan x="15" dy="16">A</tspan><tspan x="15" dy="16">M</tspan><tspan x="15" dy="16">9</tspan><tspan x="15" dy="16">F</tspan>
+  </text>
+  <text x="90" y="0" class="matrix-col col-front" style="font-size: 14px; opacity: 1.0; animation-duration: 1.9s; animation-delay: -1.5s;">
+    <tspan x="90" dy="0">T</tspan><tspan x="90" dy="15">H</tspan><tspan x="90" dy="15">R</tspan><tspan x="90" dy="15">E</tspan><tspan x="90" dy="15">A</tspan><tspan x="90" dy="15">T</tspan><tspan x="90" dy="15">0</tspan><tspan x="90" dy="15">1</tspan>
+  </text>
+  <text x="140" y="0" class="matrix-col col-front" style="font-size: 16px; opacity: 1.0; animation-duration: 2.4s; animation-delay: -0.8s;">
+    <tspan x="140" dy="0">M</tspan><tspan x="140" dy="17">A</tspan><tspan x="140" dy="17">L</tspan><tspan x="140" dy="17">W</tspan><tspan x="140" dy="17">A</tspan><tspan x="140" dy="17">R</tspan><tspan x="140" dy="17">E</tspan>
+  </text>
+  <text x="190" y="0" class="matrix-col col-front" style="font-size: 15px; opacity: 1.0; animation-duration: 2.0s; animation-delay: -2.2s;">
+    <tspan x="190" dy="0">P</tspan><tspan x="190" dy="16">H</tspan><tspan x="190" dy="16">I</tspan><tspan x="190" dy="16">S</tspan><tspan x="190" dy="16">H</tspan><tspan x="190" dy="16">I</tspan><tspan x="190" dy="16">N</tspan><tspan x="190" dy="16">G</tspan>
+  </text>
+  <text x="240" y="0" class="matrix-col col-front" style="font-size: 14px; opacity: 1.0; animation-duration: 2.3s; animation-delay: -1.1s;">
+    <tspan x="240" dy="0">G</tspan><tspan x="240" dy="15">U</tspan><tspan x="240" dy="15">A</tspan><tspan x="240" dy="15">R</tspan><tspan x="240" dy="15">D</tspan><tspan x="240" dy="15">9</tspan><tspan x="240" dy="15">9</tspan>
+  </text>
+  <text x="300" y="0" class="matrix-col col-front" style="font-size: 16px; opacity: 1.0; animation-duration: 1.8s; animation-delay: -0.2s;">
+    <tspan x="300" dy="0">S</tspan><tspan x="300" dy="17">A</tspan><tspan x="300" dy="17">F</tspan><tspan x="300" dy="17">E</tspan><tspan x="300" dy="17">3</tspan><tspan x="300" dy="17">A</tspan>
+  </text>
+  <text x="360" y="0" class="matrix-col col-front" style="font-size: 15px; opacity: 1.0; animation-duration: 2.5s; animation-delay: -1.7s;">
+    <tspan x="360" dy="0">C</tspan><tspan x="360" dy="16">Y</tspan><tspan x="360" dy="16">B</tspan><tspan x="360" dy="16">E</tspan><tspan x="360" dy="16">R</tspan><tspan x="360" dy="16">N</tspan><tspan x="360" dy="16">E</tspan><tspan x="360" dy="16">T</tspan>
+  </text>
+  <text x="420" y="0" class="matrix-col col-front" style="font-size: 14px; opacity: 1.0; animation-duration: 2.1s; animation-delay: -0.9s;">
+    <tspan x="420" dy="0">K</tspan><tspan x="420" dy="15">E</tspan><tspan x="420" dy="15">Y</tspan><tspan x="420" dy="15">L</tspan><tspan x="420" dy="15">O</tspan><tspan x="420" dy="15">C</tspan><tspan x="420" dy="15">K</tspan>
+  </text>
+  <text x="490" y="0" class="matrix-col col-front" style="font-size: 16px; opacity: 1.0; animation-duration: 2.2s; animation-delay: -2.7s;">
+    <tspan x="490" dy="0">S</tspan><tspan x="490" dy="17">I</tspan><tspan x="490" dy="17">N</tspan><tspan x="490" dy="17">G</tspan><tspan x="490" dy="17">H</tspan><tspan x="490" dy="17">A</tspan><tspan x="490" dy="17">M</tspan>
+  </text>
+  <text x="540" y="0" class="matrix-col col-front" style="font-size: 15px; opacity: 1.0; animation-duration: 1.9s; animation-delay: -0.5s;">
+    <tspan x="540" dy="0">S</tspan><tspan x="540" dy="16">E</tspan><tspan x="540" dy="16">C</tspan><tspan x="540" dy="16">U</tspan><tspan x="540" dy="16">R</tspan><tspan x="540" dy="16">I</tspan><tspan x="540" dy="16">T</tspan><tspan x="540" dy="16">Y</tspan>
+  </text>
+  <text x="590" y="0" class="matrix-col col-front" style="font-size: 14px; opacity: 1.0; animation-duration: 2.4s; animation-delay: -1.4s;">
+    <tspan x="590" dy="0">M</tspan><tspan x="590" dy="15">A</tspan><tspan x="590" dy="15">L</tspan><tspan x="590" dy="15">W</tspan><tspan x="590" dy="15">A</tspan><tspan x="590" dy="15">R</tspan><tspan x="590" dy="15">E</tspan>
+  </text>
+  <text x="640" y="0" class="matrix-col col-front" style="font-size: 15px; opacity: 1.0; animation-duration: 2.0s; animation-delay: -2.9s;">
+    <tspan x="640" dy="0">P</tspan><tspan x="640" dy="16">H</tspan><tspan x="640" dy="16">I</tspan><tspan x="640" dy="16">S</tspan><tspan x="640" dy="16">H</tspan><tspan x="640" dy="16">I</tspan><tspan x="640" dy="16">N</tspan><tspan x="640" dy="16">G</tspan>
+  </text>
+  <text x="690" y="0" class="matrix-col col-front" style="font-size: 15px; opacity: 1.0; animation-duration: 2.3s; animation-delay: -0.6s;">
+    <tspan x="690" dy="0">A</tspan><tspan x="690" dy="16">L</tspan><tspan x="690" dy="16">E</tspan><tspan x="690" dy="16">R</tspan><tspan x="690" dy="16">T</tspan><tspan x="690" dy="16">X</tspan><tspan x="690" dy="16">0</tspan>
+  </text>
+  <text x="740" y="0" class="matrix-col col-front" style="font-size: 14px; opacity: 1.0; animation-duration: 2.1s; animation-delay: -1.8s;">
+    <tspan x="740" dy="0">Q</tspan><tspan x="740" dy="15">R</tspan><tspan x="740" dy="15">C</tspan><tspan x="740" dy="15">O</tspan><tspan x="740" dy="15">D</tspan><tspan x="740" dy="15">E</tspan>
+  </text>
+  <text x="790" y="0" class="matrix-col col-front" style="font-size: 15px; opacity: 1.0; animation-duration: 2.5s; animation-delay: -0.1s;">
+    <tspan x="790" dy="0">N</tspan><tspan x="790" dy="16">E</tspan><tspan x="790" dy="16">T</tspan><tspan x="790" dy="16">W</tspan><tspan x="790" dy="16">O</tspan><tspan x="790" dy="16">R</tspan><tspan x="790" dy="16">K</tspan>
+  </text>
+  <text x="840" y="0" class="matrix-col col-front" style="font-size: 16px; opacity: 1.0; animation-duration: 1.8s; animation-delay: -2.3s;">
+    <tspan x="840" dy="0">H</tspan><tspan x="840" dy="17">A</tspan><tspan x="840" dy="17">S</tspan><tspan x="840" dy="17">H</tspan><tspan x="840" dy="17">V</tspan><tspan x="840" dy="17">E</tspan><tspan x="840" dy="17">R</tspan>
+  </text>
+  <text x="890" y="0" class="matrix-col col-front" style="font-size: 15px; opacity: 1.0; animation-duration: 2.2s; animation-delay: -1.2s;">
+    <tspan x="890" dy="0">S</tspan><tspan x="890" dy="16">I</tspan><tspan x="890" dy="16">N</tspan><tspan x="890" dy="16">G</tspan><tspan x="890" dy="16">H</tspan><tspan x="890" dy="16">A</tspan><tspan x="890" dy="16">M</tspan>
+  </text>
+  <text x="940" y="0" class="matrix-col col-front" style="font-size: 14px; opacity: 1.0; animation-duration: 2.0s; animation-delay: -0.7s;">
+    <tspan x="940" dy="0">S</tspan><tspan x="940" dy="15">C</tspan><tspan x="940" dy="15">A</tspan><tspan x="940" dy="15">N</tspan><tspan x="940" dy="15">O</tspan><tspan x="940" dy="15">K</tspan>
+  </text>
+  <text x="985" y="0" class="matrix-col col-front" style="font-size: 15px; opacity: 1.0; animation-duration: 2.3s; animation-delay: -1.9s;">
+    <tspan x="985" dy="0">A</tspan><tspan x="985" dy="16">C</tspan><tspan x="985" dy="16">T</tspan><tspan x="985" dy="16">I</tspan><tspan x="985" dy="16">V</tspan><tspan x="985" dy="16">E</tspan>
+  </text>
+
+  <!-- Mid Layer (Medium, Semi-Transparent, Normal speed) -->
+  <text x="40" y="0" class="matrix-col col-mid" style="font-size: 12px; opacity: 0.65; animation-duration: 3.1s; animation-delay: -0.7s;">
+    <tspan x="40" dy="0">0</tspan><tspan x="40" dy="13">1</tspan><tspan x="40" dy="13">0</tspan><tspan x="40" dy="13">1</tspan><tspan x="40" dy="13">0</tspan><tspan x="40" dy="13">1</tspan><tspan x="40" dy="13">0</tspan><tspan x="40" dy="13">1</tspan>
+  </text>
+  <text x="115" y="0" class="matrix-col col-mid" style="font-size: 11px; opacity: 0.65; animation-duration: 2.8s; animation-delay: -2.5s;">
+    <tspan x="115" dy="0">A</tspan><tspan x="115" dy="12">B</tspan><tspan x="115" dy="12">C</tspan><tspan x="115" dy="12">D</tspan><tspan x="115" dy="12">E</tspan><tspan x="115" dy="12">F</tspan><tspan x="115" dy="12">9</tspan><tspan x="115" dy="12">9</tspan>
+  </text>
+  <text x="165" y="0" class="matrix-col col-mid" style="font-size: 13px; opacity: 0.65; animation-duration: 3.5s; animation-delay: -1.2s;">
+    <tspan x="165" dy="0">S</tspan><tspan x="165" dy="14">I</tspan><tspan x="165" dy="14">N</tspan><tspan x="165" dy="14">G</tspan><tspan x="165" dy="14">H</tspan><tspan x="165" dy="14">A</tspan><tspan x="165" dy="14">M</tspan>
+  </text>
+  <text x="215" y="0" class="matrix-col col-mid" style="font-size: 12px; opacity: 0.65; animation-duration: 2.9s; animation-delay: -3.1s;">
+    <tspan x="215" dy="0">X</tspan><tspan x="215" dy="13">G</tspan><tspan x="215" dy="13">B</tspan><tspan x="215" dy="13">O</tspan><tspan x="215" dy="13">O</tspan><tspan x="215" dy="13">S</tspan><tspan x="215" dy="13">T</tspan>
+  </text>
+  <text x="265" y="0" class="matrix-col col-mid" style="font-size: 11px; opacity: 0.65; animation-duration: 3.3s; animation-delay: -0.4s;">
+    <tspan x="265" dy="0">S</tspan><tspan x="265" dy="12">H</tspan><tspan x="265" dy="12">A</tspan><tspan x="265" dy="12">P</tspan><tspan x="265" dy="12">X</tspan><tspan x="265" dy="12">A</tspan><tspan x="265" dy="12">I</tspan>
+  </text>
+  <text x="330" y="0" class="matrix-col col-mid" style="font-size: 13px; opacity: 0.65; animation-duration: 2.7s; animation-delay: -1.9s;">
+    <tspan x="330" dy="0">G</tspan><tspan x="330" dy="14">E</tspan><tspan x="330" dy="14">M</tspan><tspan x="330" dy="14">I</tspan><tspan x="330" dy="14">N</tspan><tspan x="330" dy="14">I</tspan><tspan x="330" dy="14">3</tspan><tspan x="330" dy="14">5</tspan>
+  </text>
+  <text x="415" y="0" class="matrix-col col-mid" style="font-size: 12px; opacity: 0.65; animation-duration: 3.4s; animation-delay: -2.8s;">
+    <tspan x="415" dy="0">P</tspan><tspan x="415" dy="13">E</tspan><tspan x="415" dy="13">F</tspan><tspan x="415" dy="13">I</tspan><tspan x="415" dy="13">L</tspan><tspan x="415" dy="13">E</tspan>
+  </text>
+  <text x="515" y="0" class="matrix-col col-mid" style="font-size: 13px; opacity: 0.65; animation-duration: 3.2s; animation-delay: -1.6s;">
+    <tspan x="515" dy="0">F</tspan><tspan x="515" dy="14">L</tspan><tspan x="515" dy="14">A</tspan><tspan x="515" dy="14">S</tspan><tspan x="515" dy="14">K</tspan><tspan x="515" dy="14">A</tspan><tspan x="515" dy="14">P</tspan><tspan x="515" dy="14">I</tspan>
+  </text>
+  <text x="615" y="0" class="matrix-col col-mid" style="font-size: 12px; opacity: 0.65; animation-duration: 2.9s; animation-delay: -3.4s;">
+    <tspan x="615" dy="0">S</tspan><tspan x="615" dy="13">Q</tspan><tspan x="615" dy="13">L</tspan><tspan x="615" dy="13">I</tspan><tspan x="615" dy="13">T</tspan><tspan x="615" dy="13">E</tspan>
+  </text>
+  <text x="715" y="0" class="matrix-col col-mid" style="font-size: 11px; opacity: 0.65; animation-duration: 3.6s; animation-delay: -0.8s;">
+    <tspan x="715" dy="0">D</tspan><tspan x="715" dy="12">O</tspan><tspan x="715" dy="12">C</tspan><tspan x="715" dy="12">K</tspan><tspan x="715" dy="12">E</tspan><tspan x="715" dy="12">R</tspan>
+  </text>
+  <text x="815" y="0" class="matrix-col col-mid" style="font-size: 13px; opacity: 0.65; animation-duration: 2.8s; animation-delay: -2.1s;">
+    <tspan x="815" dy="0">V</tspan><tspan x="815" dy="14">A</tspan><tspan x="815" dy="14">N</tspan><tspan x="815" dy="14">I</tspan><tspan x="815" dy="14">L</tspan><tspan x="815" dy="14">L</tspan><tspan x="815" dy="14">A</tspan>
+  </text>
+  <text x="915" y="0" class="matrix-col col-mid" style="font-size: 12px; opacity: 0.65; animation-duration: 3.5s; animation-delay: -1.9s;">
+    <tspan x="915" dy="0">G</tspan><tspan x="915" dy="13">I</tspan><tspan x="915" dy="13">T</tspan><tspan x="915" dy="13">H</tspan><tspan x="915" dy="13">U</tspan><tspan x="915" dy="13">B</tspan>
+  </text>
+
+  <!-- Back Layer (Small, Very Faint, Slow) -->
+  <text x="30" y="0" class="matrix-col col-back" style="font-size: 9px; opacity: 0.35; animation-duration: 4.8s; animation-delay: -1.5s;">
+    <tspan x="30" dy="0">P</tspan><tspan x="30" dy="10">O</tspan><tspan x="30" dy="10">R</tspan><tspan x="30" dy="10">T</tspan><tspan x="30" dy="10">5</tspan><tspan x="30" dy="10">0</tspan><tspan x="30" dy="10">0</tspan><tspan x="30" dy="10">0</tspan>
+  </text>
+  <text x="65" y="0" class="matrix-col col-back" style="font-size: 8px; opacity: 0.35; animation-duration: 4.2s; animation-delay: -3.8s;">
+    <tspan x="65" dy="0">I</tspan><tspan x="65" dy="9">N</tspan><tspan x="65" dy="9">I</tspan><tspan x="65" dy="9">T</tspan><tspan x="65" dy="9">O</tspan><tspan x="65" dy="9">K</tspan>
+  </text>
+  <text x="165" y="0" class="matrix-col col-back" style="font-size: 10px; opacity: 0.35; animation-duration: 5.2s; animation-delay: -0.5s;">
+    <tspan x="165" dy="0">M</tspan><tspan x="165" dy="11">E</tspan><tspan x="165" dy="11">M</tspan><tspan x="165" dy="11">A</tspan><tspan x="165" dy="11">L</tspan><tspan x="165" dy="11">L</tspan><tspan x="165" dy="11">O</tspan><tspan x="165" dy="11">C</tspan>
+  </text>
+  <text x="265" y="0" class="matrix-col col-back" style="font-size: 9px; opacity: 0.35; animation-duration: 4.5s; animation-delay: -2.9s;">
+    <tspan x="265" dy="0">R</tspan><tspan x="265" dy="10">A</tspan><tspan x="265" dy="10">G</tspan><tspan x="265" dy="10">I</tspan><tspan x="265" dy="10">N</tspan><tspan x="265" dy="10">D</tspan><tspan x="265" dy="10">E</tspan><tspan x="265" dy="10">X</tspan>
+  </text>
+  <text x="565" y="0" class="matrix-col col-back" style="font-size: 8px; opacity: 0.35; animation-duration: 5.5s; animation-delay: -1.1s;">
+    <tspan x="565" dy="0">V</tspan><tspan x="565" dy="9">E</tspan><tspan x="565" dy="9">C</tspan><tspan x="565" dy="9">T</tspan><tspan x="565" dy="9">O</tspan><tspan x="565" dy="9">R</tspan>
+  </text>
+  <text x="665" y="0" class="matrix-col col-back" style="font-size: 10px; opacity: 0.35; animation-duration: 4.0s; animation-delay: -3.4s;">
+    <tspan x="665" dy="0">U</tspan><tspan x="665" dy="11">R</tspan><tspan x="665" dy="11">L</tspan><tspan x="665" dy="11">S</tspan><tspan x="665" dy="11">C</tspan><tspan x="665" dy="11">A</tspan><tspan x="665" dy="11">N</tspan>
+  </text>
+  <text x="865" y="0" class="matrix-col col-back" style="font-size: 9px; opacity: 0.35; animation-duration: 5.0s; animation-delay: -0.9s;">
+    <tspan x="865" dy="0">L</tspan><tspan x="865" dy="10">O</tspan><tspan x="865" dy="10">G</tspan><tspan x="865" dy="10">S</tspan><tspan x="865" dy="10">A</tspan><tspan x="865" dy="10">V</tspan><tspan x="865" dy="10">E</tspan>
+  </text>
+</svg>
