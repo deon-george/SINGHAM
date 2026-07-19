@@ -251,12 +251,18 @@ The Email Phishing analysis system relies on Google Gemini models. You need to c
 - ✅ Project Planning
 - ✅ System Design
 - ✅ Dataset Collection
-- ⏳ Frontend Development & UI Refinement
-- ⏳ Backend APIs integration
-- ⏳ Unified Email Phishing Detection
-- ⏳ Unified URL Scam Detection
-- ⏳ Unified QR Scam Detection
-- ⏳ Unified Malware Detection
-- ⏳ AI Explanation (XAI) Engine
+- ✅ Frontend Development & UI Refinement
+- ✅ Backend APIs integration
+- ✅ Unified Email Phishing Detection
+- ✅ Unified URL Scam Detection
+- ✅ Unified QR Scam Detection
+- ✅ Unified Malware Detection
+- ✅ AI Explanation (XAI) Engine
 - ⏳ Centralized Threat Report Dashboard
 - ⏳ Production Deployment & Docker Support
+
+---
+
+<p align="center">
+  Made with ❤️ by Deon George, Karthik Krishnan, Amal Kuriyan Royce, and Joel M Thomas
+</p>
