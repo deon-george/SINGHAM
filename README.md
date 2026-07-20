@@ -78,7 +78,7 @@ Instead of simply labeling something as "Safe" or "Dangerous", the platform also
 
 ---
 
-#The App is Live at:https://singham-k1ty.onrender.com/
+## The App is Live at:https://singham-k1ty.onrender.com/
 
 # 🏗️ System Architecture
 
